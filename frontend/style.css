@@ -1,0 +1,275 @@
+/* --- General Styling & Fonts --- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+    --primary-color: #0052D4;
+    --secondary-color: #65C7F7;
+    --background-color: #f4f7f6;
+    --text-color: #333;
+    --card-bg: #ffffff;
+    --positive-color: #28a745;
+    --negative-color: #dc3545;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+/* --- Header & Navigation --- */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background: var(--card-bg);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.nav-bar a {
+    text-decoration: none;
+    color: var(--text-color);
+    margin: 0 1rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-bar a:hover {
+    color: var(--primary-color);
+}
+
+.menu-icon {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+/* --- Main Content Sections --- */
+main {
+    padding: 0 5%;
+}
+
+.analyzer-section {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.analyzer-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 2rem;
+    max-width: 600px;
+}
+
+.content-section {
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.content-section h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* --- Input Box --- */
+.input-box {
+    display: flex;
+    align-items: center;
+    max-width: 600px;
+    width: 100%;
+    background: var(--card-bg);
+    border-radius: 50px;
+    box-shadow: var(--shadow);
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.input-box i {
+    color: #aaa;
+    margin: 0 1rem;
+}
+
+.input-box input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    background: transparent;
+}
+
+.input-box button {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 0.8rem 1.8rem;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.input-box button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(0, 82, 212, 0.3);
+}
+
+.input-box button:disabled {
+    cursor: not-allowed;
+    background: #ccc;
+}
+
+.error-message {
+    color: var(--negative-color);
+    font-weight: 500;
+    height: 1rem;
+}
+
+/* --- Results & Chart --- */
+.results-container {
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.chart-box {
+    flex: 1;
+    max-width: 350px;
+    margin: 0 auto;
+}
+
+.summary-stats {
+    flex: 1;
+    text-align: left;
+}
+
+.summary-stats h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.stat {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.stat-icon {
+    font-size: 1.5rem;
+    width: 30px;
+}
+.stat .positive { color: var(--positive-color); }
+.stat .negative { color: var(--negative-color); }
+
+/* --- Features Section --- */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature-card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+}
+
+.feature-card i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* --- Footer --- */
+.footer {
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+    border-top: 1px solid #ddd;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .nav-bar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: var(--card-bg);
+    }
+    .nav-bar.responsive {
+        display: flex;
+    }
+    .nav-bar a {
+        padding: 1rem;
+        text-align: center;
+        border-top: 1px solid #eee;
+    }
+    .menu-icon {
+        display: block;
+    }
+    .analyzer-content h1 {
+        font-size: 2rem;
+    }
+    .results-container {
+        flex-direction: column;
+    }
+    .chart-box {
+        max-width: 300px;
+    }
+    .summary-stats {
+        text-align: center;
+    }
+}

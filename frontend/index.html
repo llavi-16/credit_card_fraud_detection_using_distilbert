@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TubeSentiment - YouTube Comment Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="page-header">
+        <div class="logo">
+            <i class="fa-solid fa-chart-pie"></i>
+            <h1>TubeSentiment</h1>
+        </div>
+        <nav id="navigation-bar" class="nav-bar">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#features">Features</a>
+        </nav>
+        <button id="menu-icon" class="menu-icon" aria-label="Open menu">
+            <i class="fa fa-bars"></i>
+        </button>
+    </header>
+
+    <main>
+        <section id="home" class="analyzer-section">
+            <div class="analyzer-content">
+                <h1>Analyze YouTube Comment Sentiment Instantly</h1>
+                <p class="subtitle">Paste a video link below to understand audience feedback with AI.</p>
+                <div class="input-box">
+                    <i class="fa-solid fa-link"></i>
+                    <input id="videoUrlInput" type="text" placeholder="Paste YouTube link here...">
+                    <button id="analyzeButton">Analyze</button>
+                </div>
+                <p id="errorMessage" class="error-message"></p>
+            </div>
+            <div class="results-container" id="resultsContainer" style="display: none;">
+                <div class="chart-box">
+                    <canvas id="sentimentChart"></canvas>
+                </div>
+                <div id="summary" class="summary-stats"></div>
+            </div>
+        </section>
+
+        <section id="about" class="content-section">
+            <h2>About The Tool</h2>
+            <p>TubeSentiment leverages state-of-the-art AI to analyze the sentiment of YouTube comments, providing content creators and marketers with valuable insights into audience perception. Understand what people truly feel about a video in seconds.</p>
+        </section>
+
+        <section id="features" class="content-section">
+            <h2>Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fa-solid fa-robot"></i>
+                    <h3>AI-Powered Analysis</h3>
+                    <p>Utilizes a powerful transformer model for high-accuracy sentiment detection.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    <h3>Visual Reports</h3>
+                    <p>Get an easy-to-understand pie chart visualizing the sentiment breakdown.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-bolt"></i>
+                    <h3>Fast & Responsive</h3>
+                    <p>A clean, fast, and fully responsive interface that works on any device.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 TubeSentiment. All rights reserved.</p>
+    </footer>
+
+    <!-- Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Your custom script -->
+    <script src="script.js"></script>
+</body>
+</html>
